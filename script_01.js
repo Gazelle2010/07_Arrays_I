@@ -72,10 +72,13 @@ function output(outputStr) {
 // Helge Schneider: Anananderreihung...
 
 // output(getSentence("Ich","bin","Max","Mütze"));
-// output(getSentenceArr(["Ich","bin","die","coole","Maxine","Mützerich"]));
-function getSentenceArr(arr) {
+output(getSentenceArr2(["Ich","bin","die","coole","Maxine","Mützerich"]));
+output(getSentenceArr2(["Ich","bin","die","Maxine"]));
+output(getSentenceArr2(["Ich","bin"]));
+function getSentenceArr2(arr) {
     const GAP = " ";
     const PUNCT = ".";
+    let str = "";
 //     let str = arr[0] + GAP + 
 //               arr[1] + GAP + 
 //               arr[2] + GAP + 
@@ -84,12 +87,16 @@ function getSentenceArr(arr) {
 //               arr[5] +
 //               PUNCT;
 
-for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
+        str += arr[i] + GAP;
+        
 
-    output(arr[i]);
-}
+    // output(arr[i]);
+    // output(str);
+    }
+    str = str + PUNCT;
 
-//     return str; 
+    return str; 
 }
 
 
@@ -170,13 +177,13 @@ hier: Verkettung eines Strings // Transponierung
 
  
 
-let str = "";
-let gap = " ";
-let addStr = "Test";
-for (let i = 0; i <= 5; i++) {
-    output("in der loop: " + str);
-    // a = a + 1;  // Numerik
-    str = str + addStr + gap // Text
-}
-output("nach der loop: " + str);
+// let str = "";
+// let gap = " ";
+// let addStr = "Test";
+// for (let i = 0; i <= 5; i++) {
+//     output("in der loop: " + str);
+//     // a = a + 1;  // Numerik
+//     str = str + addStr + gap // Text
+// }
+// output("nach der loop: " + str);
 
