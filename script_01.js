@@ -51,21 +51,40 @@ function output(outputStr) {
 
 
 // output(getSentence("Ich","bin","Max","Mütze"));
-output(getSentenceArr(["Ich","bin","die","coole","Maxine","Mützerich"]));
-function getSentenceArr(arr) {
-    const GAP = " ";
-    const PUNCT = ".";
-    let str = arr[0] + GAP + 
-              arr[1] + GAP + 
-              arr[2] + GAP + 
-              arr[3] + GAP +
-              arr[4] + GAP +
-              arr[5] +
-              PUNCT;
+// output(getSentenceArr(["Ich","bin","die","coole","Maxine","Mützerich"]));
+// function getSentenceArr(arr) {
+//     const GAP = " ";
+//     const PUNCT = ".";
+//     let str = arr[0] + GAP + 
+//               arr[1] + GAP + 
+//               arr[2] + GAP + 
+//               arr[3] + GAP +
+//               arr[4] + GAP +
+//               arr[5] +
+//               PUNCT;
 
-    return str; 
+//     return str; 
+// }
+
+/* 02a. Theorie: Schleifen (for-schleife) */
+
+// Inkrement (untere Grenze --> obere Grenze)
+// for (let i = 0; i < 10; i++) {
+//    output("index i: " +i); 
+// }
+
+// Dekrement (obere Grenze --> untere Grenze)
+// for (let i = 10; i > 0; i--) {
+//     output("index i: " + i);
+// }
+
+// Inkrement (var. Schrittweite)
+
+//eigenes Beispiel mit Multiplikation
+// for (let i = 2; i <= 10000000; i**=2) {
+//     output("index i: " + i);
+// }
+
+for (let i = 0; i <= 100; i++) {
+    output("index i: " + i);
 }
-
-
-
-
