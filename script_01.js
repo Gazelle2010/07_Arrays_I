@@ -72,13 +72,13 @@ function output(outputStr) {
 // Helge Schneider: Anananderreihung...
 
 // output(getSentence("Ich","bin","Max","Mütze"));
-output(getSentenceArr2(["Ich","bin","die","coole","Maxine","Mützerich"]));
-output(getSentenceArr2(["Ich","bin","die","Maxine"]));
-output(getSentenceArr2(["Ich","bin"]));
-function getSentenceArr2(arr) {
-    const GAP = " ";
-    const PUNCT = ".";
-    let str = "";
+// output(getSentenceArr2(["Ich","bin","die","coole","Maxine","Mützerich"]));
+// output(getSentenceArr2(["Ich","bin","die","Maxine"]));
+// output(getSentenceArr2(["Ich","bin"]));
+// function getSentenceArr2(arr) {
+//     const GAP = " ";
+//     const PUNCT = ".";
+//     let str = "";
 //     let str = arr[0] + GAP + 
 //               arr[1] + GAP + 
 //               arr[2] + GAP + 
@@ -87,17 +87,17 @@ function getSentenceArr2(arr) {
 //               arr[5] +
 //               PUNCT;
 
-    for (let i = 0; i < arr.length; i++) {
-        str += arr[i] + GAP;
+    // for (let i = 0; i < arr.length; i++) {
+    //     str += arr[i] + GAP;
         
 
     // output(arr[i]);
     // output(str);
-    }
-    str = str + PUNCT;
+//     }
+//     str = str + PUNCT;
 
-    return str; 
-}
+//     return str; 
+// }
 
 
 /* 02a. Theorie: Schleifen (for-schleife) */
@@ -137,13 +137,9 @@ function getSentenceArr2(arr) {
 
 
 /*
-
 1. Einer Variablen kann Ihr eigener Wert zugewiesen werden.
-
 Solange die Variable existiert, bleibt dieser erhalten.
-
 hier: Aufsummierung
-
 */
 
 /* Zu "Fuß" - DRY !!! */
@@ -187,3 +183,82 @@ hier: Verkettung eines Strings // Transponierung
 // }
 // output("nach der loop: " + str);
 
+
+
+// Lösung "Kein Leerzeichen zwischen letztem Wort"
+const GAP = " ";
+const PUNCT = ".";
+
+
+output(getSentenceArr4(["Ich","bin","die","coole","Maxine","Mützerich"]));
+// output(getSentenceArr4(["Ich","bin","die","Maxine"]));
+// output(getSentenceArr4(["Ich","bin"]));
+function getSentenceArr4(arr) {
+    let str = "";
+//     let str = arr[0] + GAP + 
+//               arr[1] + GAP + 
+//               arr[2] + GAP + 
+//               arr[3] + GAP +
+//               arr[4] + GAP +
+//               arr[5] +
+//               PUNCT;
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if (i==arr.length -1)
+        {
+            str = str + arr[i] + PUNCT;
+        }
+        else
+        {
+            str = str + arr[i] + GAP;
+        }
+        // str += arr[i] + GAP;
+        
+
+    // output(arr[i]);
+    // output(str);
+    }
+    // str = str + PUNCT;
+
+    return str; 
+}
+
+function output(outputStr) {
+    console.log(outputStr)
+}
+
+// Lösung Variante vom Dozenten:
+
+output(getSentenceArr2(["Ich","bin","die","coole","Maxine","Mützerich"]));
+output(getSentenceArr2(["Ich","bin","die","Maxine"]));
+output(getSentenceArr2(["Ich","bin"]));
+function getSentenceArr2(arr) {
+    const GAP = " ";
+    const PUNCT = ".";
+    let str = "";
+
+    for (let i = 0; i < arr.length; i++) {
+        str += arr[i] + GAP;
+
+       // 2. Variante IF-ELSE
+        if (i != arr.length -1)
+         {
+             str += arr[i] + GAP;
+         } else {
+             str += arr[i] + PUNCT;
+         }
+    }
+
+   // 1. Variante trim
+    str = str.trimEnd();
+    str = str + PUNCT;
+
+   return str;
+}
+
+// Modul: Ausgabe in Konsole : Test
+// output("hi"); 
+function output(outputStr) {
+    console.log(outputStr);
+}
